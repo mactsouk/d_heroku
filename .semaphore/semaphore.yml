@@ -13,7 +13,6 @@ blocks:
         commands:
           - checkout
           - heroku version
-          - heroku plugins:install heroku-container-registry
           - docker build -t go_hw:v1 .
           - docker images
           - docker run go_hw:v1
