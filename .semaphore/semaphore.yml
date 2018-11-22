@@ -16,6 +16,9 @@ blocks:
           - docker build -t go_hw:v1 .
           - docker images
           - docker run go_hw:v1
+          - heroku login
+          - heroku container:login
+          - heroku container:push master
       secrets:
         - name: heroku-hub
 
@@ -26,6 +29,9 @@ blocks:
         commands:
           - checkout
           - heroku version
+          - heroku login
+          - heroku container:login
+          - heroku container:release master
       secrets:
         - name: heroku-hub
 
