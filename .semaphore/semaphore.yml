@@ -13,7 +13,8 @@ blocks:
         commands:
           - checkout
           - heroku version
-          - go run hw.go
+          - docker build -t go_hw:v1 .
+          - docker images
 
   - name: Reuse Docker Image from Heroku
     task:
@@ -22,4 +23,7 @@ blocks:
         commands:
           - checkout
           - heroku version
+
+secrets:
+      - name: heroku-hub
 
