@@ -15,8 +15,8 @@ blocks:
           - heroku version
           - docker build -t go_hw:v1 .
           - docker images
-  secrets:
-      - name: heroku-hub
+      secrets:
+        - name: heroku-hub
 
   - name: Reuse Docker Image from Heroku
     task:
@@ -25,6 +25,6 @@ blocks:
         commands:
           - checkout
           - heroku version
-  secrets:
-      - name: heroku-hub
+      secrets:
+        - name: heroku-hub
 
