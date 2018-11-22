@@ -18,7 +18,7 @@ blocks:
   - name: Reuse Docker Image from Heroku
     task:
       jobs:
-      - name: RSpec
+      - name: Pull and reuse Docker image
         commands:
           - checkout
           - heroku version
