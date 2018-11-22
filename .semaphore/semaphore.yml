@@ -15,6 +15,7 @@ blocks:
           - heroku version
           - docker build -t go_hw:v1 .
           - docker images
+          - docker run go_hw:v1
       secrets:
         - name: heroku-hub
 
