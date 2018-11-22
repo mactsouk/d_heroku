@@ -1,0 +1,25 @@
+version: v1.0
+name: Docker to Heroku
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+  - name: Create Docker Image and Push it to Heroku
+    task:
+      jobs:
+      - name: Build and store Docker image
+        commands:
+          - checkout
+          - heroku version
+          - go run hw.go
+
+  - name: Reuse Docker Image from Heroku
+    task:
+      jobs:
+      - name: RSpec
+        commands:
+          - checkout
+          - heroku version
+
